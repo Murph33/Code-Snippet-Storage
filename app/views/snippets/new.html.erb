@@ -1,0 +1,18 @@
+<h1>Submit a New Code Snippet</h1>
+
+
+<%= form_for @snippet do |f| %>
+  <div>
+    <%= f.label :category %>
+    <%= f.collection_select :category_id, Category.all, :id, :name %>
+  </div><br>
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div><br>
+  <div>
+    <%= f.label :code %>
+    <%= f.text_area :code %>
+  </div><br>
+  <%= f.submit %>
+<% end %>

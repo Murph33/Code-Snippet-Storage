@@ -1,0 +1,8 @@
+<h1> <%= @category.name %> Snippets!</h1>
+
+<% @category.snippets.each do |snippet| %>
+
+  <%= link_to snippet.title, category_snippet_path(@category, snippet) %>
+
+
+<% end %>

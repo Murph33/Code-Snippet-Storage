@@ -1,0 +1,7 @@
+<h1>Select a Category to see your snippets</h1>
+
+<% @categories.each do |category| %>
+
+  <h3><%= link_to "#{category.name}(#{category.snippets.length} snippets)", category %></h3>
+
+<% end %>
