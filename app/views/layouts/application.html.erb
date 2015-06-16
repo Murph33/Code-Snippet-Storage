@@ -7,9 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <span>Code Snippets<span> |
   <%= link_to "Languages", categories_path %> |
-  <%= link_to "All Snippets", snippets_index_path %> |
-  <%= link_to "New Snippet", snippets_path %> 
+  <%= link_to "New Snippet", snippets_path %>
 
 <%= yield %>
 
