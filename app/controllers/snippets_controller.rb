@@ -1,7 +1,11 @@
 class SnippetsController < ApplicationController
 
   def index
-    @snippets = Snippet.all
+    if params[:search].present?
+      @snippets = Snippet.search params[:search]
+    else
+      @snippets = Snippet.all
+    end
   end
 
   def show
@@ -12,6 +16,10 @@ class SnippetsController < ApplicationController
   def new
     @snippet = Snippet.new
     @categories = Category.all
+  end
+
+  def search
+    @snippet = Snippet.search params[:search]
   end
 
   def create

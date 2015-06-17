@@ -1,7 +1,13 @@
 <h1>Useful Code Snippets</h1>
 
+<%= form_tag(snippets_index_path, :action => 'search', :method => 'get') do %>
+  <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+  <%= submit_tag "Search", :name => nil %>
+  <button type="reset">Clear</button>
+<% end %>
+
 <% @snippets.each do |snippet| %>
 
-  <%#= link_to "#{snippet.title}, (#{category.name})", category_snippet_path(@category, snippet) %>
+  <%= link_to snippet.title, category_snippets_path(snippet) %>
 
 <% end %>
