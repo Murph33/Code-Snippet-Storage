@@ -9,7 +9,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 gem 'redcarpet'
 gem 'pygments.rb', require: "pygments"
 
@@ -28,11 +28,3 @@ group :development, :test do
   gem 'spring'
   gem 'faker'
 end
-
-
-
-#ADD A GEM FOR MARKDOWN DISPLAY IN TEXT INPUT OR SOMETHING
-#
-#or when dsiaplying code?  clarify w/ tam I guess
-#
-#also add searching.

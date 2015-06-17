@@ -11,7 +11,26 @@
   <%= link_to "Languages", categories_path %> |
   <%= link_to "Snippets", snippets_index_path %> |
   <%= link_to "New Snippet", snippets_path %> |
+  <% unless session[:user_id] %>
+    <%= link_to "Login", new_session_path %> |
+    <%= link_to "Sign up", new_user_path %> |
 
+  <% end %>
+  <% if session[:user_id] %>
+
+
+    <%= link_to "Logout", sessions_path, method: :delete, data: {confirm: "Logout?"} %> |
+    <%= link_to "Edit profile", edit_users_path %> |
+    <% if current_user != nil %>Hello, <%= current_user.user_name %><% end %>
+  <% end %>
+<hr>
+
+<% if flash[:alert] %>
+  <%= flash[:alert] %>
+<% end %>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
+<% end %>
 <%= yield %>
 
 </body>
