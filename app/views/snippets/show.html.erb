@@ -2,4 +2,8 @@
 
 <h4><%= @snippet.title %></h4>
 
-<p><%= @snippet.code %></p>
+<h3>without raw</h3>
+<hr>
+<%= @code %>
+<hr>
+<%= raw (@code) %>
