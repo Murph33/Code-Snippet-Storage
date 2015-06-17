@@ -7,6 +7,9 @@ class SnippetsController < ApplicationController
   def show
     @snippet = Snippet.find params[:id]
     @category = Category.find params[:category_id]
+    markdown = Redcarpet::Markdown.new(Pygment,
+    no_intra_emphasis: true, autolink: true, tables: true, fenced_code_blocks: true   )
+    @code = markdown.render(@snippet.code)
   end
 
   def new
