@@ -21,10 +21,6 @@ class SnippetsController < ApplicationController
     @categories = Category.all
   end
 
-  def search
-    @snippet = Snippet.search params[:search]
-  end
-
   def create
     snippet_params = params.require(:snippet).permit(:category_id, :title, :code)
     @snippet = Snippet.new snippet_params
